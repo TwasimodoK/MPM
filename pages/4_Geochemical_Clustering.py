@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Clustering")
+st.title("Geochemical_Clustering")
 
 left,center,right = st.columns([1,2,1])
 
