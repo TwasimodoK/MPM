@@ -41,3 +41,19 @@ with right:
     )
 
 st.button("Run Clustering")
+
+from algorithms.geochem import run_geochem_pipeline
+
+import streamlit as st
+
+st.title("Geochemical Clustering")
+
+if st.button("Run Geochem Pipeline"):
+
+    df = st.session_state["geochem_raw"]
+
+    result = run_geochem_pipeline(df)
+
+    st.session_state["geochem_result"] = result
+
+    st.success("Completed")
