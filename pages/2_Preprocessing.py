@@ -47,3 +47,19 @@ with right:
     st.button("Show Anomaly Map")
 
 st.button("➡ Next")
+
+import streamlit as st
+
+st.title("Data Preprocessing")
+
+if "geochem_raw" not in st.session_state:
+
+    st.warning("Upload data first")
+
+else:
+
+    df = st.session_state["geochem_raw"]
+
+    st.success("Data received")
+
+    st.write(df.head())
