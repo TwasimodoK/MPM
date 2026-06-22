@@ -57,3 +57,14 @@ if st.button("Run Geochem Pipeline"):
     st.session_state["geochem_result"] = result
 
     st.success("Completed")
+from algorithms.geochem import run_geochem_pipeline
+
+if st.button("Run Geochem"):
+
+    result = run_geochem_pipeline(
+        st.session_state["geochem_raw"]
+    )
+
+    st.session_state["geochem_result"] = result
+
+    st.success("Done")
