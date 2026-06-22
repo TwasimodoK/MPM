@@ -68,3 +68,6 @@ if st.button("Run Geochem"):
     st.session_state["geochem_result"] = result
 
     st.success("Done")
+    
+if st.button("Next ➜"):
+    st.switch_page("pages/3_Feature_Engineering.py")
