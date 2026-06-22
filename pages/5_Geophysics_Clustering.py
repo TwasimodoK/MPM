@@ -42,7 +42,7 @@ with right:
 
 st.button("Run Clustering")
 
-from algorithms.geophysical import run_geophysical_pipeline
+from algorithms.geophysics import run_geophysics_pipeline
 
 import streamlit as st
 
@@ -50,22 +50,22 @@ st.title("Geophysical Clustering")
 
 if st.button("Run Geophysical Pipeline"):
 
-    df = st.session_state["geophysical_raw"]
+    df = st.session_state["geophysics_raw"]
 
-    result = run_geophysical_pipeline(df)
+    result = run_geophysics_pipeline(df)
 
-    st.session_state["geophysical_result"] = result
+    st.session_state["geophysics_result"] = result
 
     st.success("Completed")
-from algorithms.geophysical import run_geophysical_pipeline
+from algorithms.geophysics import run_geophysics_pipeline
 
 if st.button("Run Geochem"):
 
-    result = run_geophysical_pipeline(
-        st.session_state["geophysical_raw"]
+    result = run_geophysics_pipeline(
+        st.session_state["geophysics_raw"]
     )
 
-    st.session_state["geophysical_result"] = result
+    st.session_state["geophysics_result"] = result
 
     st.success("Done")
     
