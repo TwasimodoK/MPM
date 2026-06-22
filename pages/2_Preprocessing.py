@@ -63,3 +63,5 @@ else:
     st.success("Data received")
 
     st.write(df.head())
+
+st.write(st.session_state["geochem_raw"].head())
