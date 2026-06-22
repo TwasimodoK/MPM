@@ -136,9 +136,15 @@ with col2:
 with col3:
     st.metric("Status", "Ready")
 
-
-
+if st.button("Next ➜"):
+    st.switch_page("pages/3_Feature_Engineering.py")
     st.success("Data Uploaded")
 
     st.dataframe(df.head())
+
+if uploaded_file:
+
+    df = pd.read_csv(uploaded_file)
+
+    st.session_state["geochem_raw"] = df
 
