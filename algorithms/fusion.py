@@ -1,2 +1,4 @@
-def run_fusion(geochem, geophysics):
-    return geochem
+def run_fusion(geo, geophys):
+    return {
+        "prospectivity": "High"
+    }
