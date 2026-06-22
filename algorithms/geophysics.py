@@ -1,2 +1,4 @@
 def run_geophysics_pipeline(df):
-    return df
+    return {
+        "clusters": [2] * len(df)
+    }
