@@ -136,21 +136,7 @@ with col2:
 with col3:
     st.metric("Status", "Ready")
 
-import streamlit as st
-import pandas as pd
 
-st.title("MPM Dashboard")
-
-uploaded_file = st.file_uploader(
-    "Upload Geochemistry CSV",
-    type=["csv"]
-)
-
-if uploaded_file:
-
-    df = pd.read_csv(uploaded_file)
-
-    st.session_state["geochem_raw"] = df
 
     st.success("Data Uploaded")
 
