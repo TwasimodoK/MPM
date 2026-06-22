@@ -155,3 +155,4 @@ if uploaded_file:
     st.success("Data Uploaded")
 
     st.dataframe(df.head())
+
