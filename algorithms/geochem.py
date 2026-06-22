@@ -1,2 +1,4 @@
 def run_geochem_pipeline(df):
-    return df
+    return {
+        "clusters": [1] * len(df)
+    }
