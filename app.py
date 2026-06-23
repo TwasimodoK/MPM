@@ -13,8 +13,6 @@ st.set_page_config(
 
 st.title("Mineral Prospectivity Mapping Dashboard")
 
-st.markdown("""
-
 st.divider()
 
 # ---------------- LAYOUT ---------------- #
