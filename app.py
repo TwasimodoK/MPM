@@ -121,7 +121,7 @@ with right:
 
     st.markdown("---")
 
-    if st.button("🚀 Run Analysis"):
+    if st.button("Run Analysis"):
         st.success(
             f"Running {algorithm}"
         )
