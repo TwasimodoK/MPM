@@ -12,4 +12,4 @@ else:
     st.warning("Run clustering first")
 
 if st.button("Next ➜"):
-    st.switch_page("pages/3_Feature_Engineering.py")
+    st.switch_page("pages/7_Prospectivity_Mapping.py")
