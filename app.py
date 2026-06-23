@@ -42,7 +42,7 @@ with left:
 
     st.markdown("---")
 
-    st.subheader("🗂 Layers")
+    st.subheader("Layers")
 
     geo = st.checkbox("Geochemistry", value=True)
     mag = st.checkbox("Magnetic")
