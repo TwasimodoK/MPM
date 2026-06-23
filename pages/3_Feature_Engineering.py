@@ -47,4 +47,4 @@ with right:
     st.checkbox("Correlation Filter")
 
 if st.button("Next ➜"):
-    st.switch_page("pages/3_Feature_Engineering.py")
+    st.switch_page("pages/4_Geochemical_Clustering.py")
