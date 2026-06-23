@@ -11,11 +11,9 @@ st.set_page_config(
 
 # ---------------- HEADER ---------------- #
 
-st.title("⛏️ Mineral Prospectivity Mapping Dashboard")
+st.title("Mineral Prospectivity Mapping Dashboard")
 
 st.markdown("""
-### Upload → Preprocess → Feature Engineering → Clustering → Fusion → Prospectivity Mapping
-""")
 
 st.divider()
 
