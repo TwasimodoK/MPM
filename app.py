@@ -14,7 +14,7 @@ st.set_page_config(
 st.title("⛏️ Mineral Prospectivity Mapping Dashboard")
 
 st.markdown("""
-Home | About | Data Upload | Processing | Visualization | Results | Export
+### Upload → Preprocess → Feature Engineering → Clustering → Fusion → Prospectivity Mapping
 """)
 
 st.divider()
@@ -46,7 +46,7 @@ with left:
 
     st.markdown("---")
 
-    st.subheader("Layers")
+    st.subheader("🗂 Layers")
 
     geo = st.checkbox("Geochemistry", value=True)
     mag = st.checkbox("Magnetic")
@@ -66,15 +66,24 @@ with center:
 
     if csv_file is not None:
 
-        df = pd.read_csv(csv_file)
+        try:
 
-        st.success("CSV Loaded Successfully")
+            df = pd.read_csv(csv_file)
 
-        st.dataframe(
-            df,
-            use_container_width=True,
-            height=500
-        )
+            # Save dataframe globally for all pages
+            st.session_state["geochem_raw"] = df
+
+            st.success("✅ CSV Loaded Successfully")
+
+            st.dataframe(
+                df,
+                use_container_width=True,
+                height=500
+            )
+
+        except Exception as e:
+
+            st.error(f"Error reading file: {e}")
 
 # ================= RIGHT PANEL ================= #
 
@@ -128,7 +137,13 @@ st.divider()
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric("Samples", "0")
+
+    if "geochem_raw" in st.session_state:
+        samples = len(st.session_state["geochem_raw"])
+    else:
+        samples = 0
+
+    st.metric("Samples", samples)
 
 with col2:
     st.metric("Layers", "5")
@@ -136,15 +151,12 @@ with col2:
 with col3:
     st.metric("Status", "Ready")
 
-if st.button("Next ➜"):
-    st.switch_page("pages/2_Preprocessing.py")
-    st.success("Data Uploaded")
+# ---------------- NEXT PAGE ---------------- #
 
-    st.dataframe(df.head())
+if "geochem_raw" in st.session_state:
 
-if uploaded_file:
+    st.success("Dataset ready for preprocessing")
 
-    df = pd.read_csv(uploaded_file)
+    if st.button("Next ➜ Preprocessing"):
 
-    st.session_state["geochem_raw"] = df
-
+        st.switch_page("pages/2_Preprocessing.py")
