@@ -137,7 +137,7 @@ with col3:
     st.metric("Status", "Ready")
 
 if st.button("Next ➜"):
-    st.switch_page("pages/3_Feature_Engineering.py")
+    st.switch_page("pages/2_Preprocessing.py")
     st.success("Data Uploaded")
 
     st.dataframe(df.head())
